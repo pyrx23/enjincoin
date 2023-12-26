@@ -1,0 +1,130 @@
+:root {
+    /* ----------- Colors ----------- */
+    --list-bg-color: #fff;
+    --list-text-color: #6B6B6B;
+    --border-color-active: #7567ce;
+    /* Active State */
+    --border-color-hover: #7567ce;
+    /* Select Field could be the same as your form field border color */
+    --list-item-bg-color: #F3F3F4;
+
+    /* ----------- Spacing ----------- */
+    --select-field-padding: 12px 12px;
+    /* Match the padding values for your form fields */
+    --list-padding: 12px 5px;
+    /* This is the top and bottom padding for the dropdown list */
+    --list-item-padding: 9px 15px;
+}
+
+.input-select-field {
+    background-position: right 10px center !important;
+}
+
+.nice-select {
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+    clear: both;
+    padding: var(--select-field-padding);
+    position: relative;
+    text-align: left !important;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.nice-select:hover {
+    border-color: var(--border-color-hover);
+}
+
+.nice-select:active,
+.nice-select.open,
+.nice-select:focus {
+    border-color: var(--border-color-active);
+}
+
+.nice-select:active span.current,
+.nice-select.open span.current,
+.nice-select:focus span.current {
+    color: #2E3538;
+}
+
+.nice-select.open .list {
+    opacity: 1;
+    pointer-events: auto;
+    -webkit-transform: scale(1) translateY(0);
+    -ms-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
+}
+
+.nice-select .list {
+    min-width: 100%;
+    max-height: 201px;
+    overflow: scroll;
+    background-color: var(--list-bg-color);
+    color: var(--list-text-color);
+    border-radius: 5px;
+    box-shadow: 0px 9px 24px rgba(15, 15, 15, 0.2), 0px 3px 6px rgba(15, 15, 15, 0.1);
+    border: 1px solid rgba(15, 15, 15, 0.05);
+    box-sizing: border-box;
+    margin-top: 2px;
+    opacity: 0;
+    overflow: hidden;
+    padding: var(--list-padding);
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-transform-origin: 50% 0;
+    -ms-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-transform: scale(0.75) translateY(-21px);
+    -ms-transform: scale(0.75) translateY(-21px);
+    transform: scale(0.75) translateY(-21px);
+    -webkit-transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+    transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+    z-index: 9;
+}
+
+.nice-select .list:hover .option:not(:hover) {
+    background-color: transparent !important;
+}
+
+.nice-select .option {
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    line-height: var(--list-item-line-height);
+    list-style: none;
+    min-height: var(--list-item-min-height);
+    outline: none;
+    padding: var(--list-item-padding);
+    text-align: left;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    margin-bottom: 1px;
+}
+
+.nice-select .option:last-child {
+    margin-bottom: 0px;
+}
+
+.nice-select .option:first-child {
+    display: none;
+}
+
+span.current {
+    color: #2E3538;
+}
+
+.nice-select .option:hover,
+.nice-select .option.focus,
+.nice-select .option.selected.focus {
+    background-color: var(--list-item-bg-color);
+    color: #2E3538;
+}
